@@ -121,13 +121,48 @@ main
 
 .main_wrap {
     max-width: 1280px;
+    height: auto;
     margin: auto;
 }
 
-.main_wrap .left_menu {
+.left_wrap {
+    width: 25%;
+    float: left;
+}
+
+.right_wrap {
+    width: 70%;
+    float: right;
+}
+
+.main_wrap .left_wrap .left_menu {
     list-style-type: none;
 }
 
-.main_wrap .left_menu li {
+.main_wrap .left_wrap .left_menu li {
     padding: 5px 3px 5px 2px;
+}
+
+.main_wrap .left_wrap .left_menu .activate {
+    background-color: #eff2f5;
+    border-radius: 6px;
+}
+
+.view_search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #9191914f;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.search_input {
+    width: 90%;
+    border: none;
+    flex: 1;
+}
+
+.fl {
+    justify-self: right;
 }
