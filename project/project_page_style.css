@@ -1,0 +1,133 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.git_head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    background-color: #f6f8fa;
+    border-bottom: 1px solid #9191914f;
+    flex-shrink: 0;
+}
+
+.head_first {
+    padding: 10px 5px 10px 15px;
+}
+
+.head_nav {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #9191914f;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 15px;
+    background-color: #f6f8fa;
+}
+
+.git_logo {
+    float: right;
+    vertical-align: middle;
+    width: 31px;
+    height: 29px;
+}
+
+.head_second {
+    flex: 1;
+}
+
+.head_title {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.search_btn {
+    float: right;
+    padding: 8px 16px 8px 16px;
+    background-color: #f6f8fa;
+    border: 1px solid #9191914f;
+    border-radius: 6px;
+    color: #919191
+}
+
+.head_third {
+    padding: 16px 16px 16px 8px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.copilot {
+    border: 1px solid #9191914f;
+    border-radius: 6px;
+    width: fit-content;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.copilot_icon {
+    background-image: url(img/copilot-brands-solid.png);
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-right: 1px solid #9191914f;
+    width: 32px;
+    height: 32px;
+}
+
+.copilot_arrow {
+    padding: 5px;
+}
+
+.line {
+    color: #d1d9e0;
+    width: 1px;
+    height: 24px;
+    border-right: 1px solid #d1d9e0;
+}
+
+.btn_box {
+    cursor: pointer;
+    border: 1px solid #9191914f;
+    border-radius: 6px;
+    padding: 4px 8px 4px 8px;
+}
+
+.user_menu {
+    cursor: pointer;
+    border: 1px solid #9191914f;
+    border-radius: 27px;
+    background-image: url(img/user.png);
+    background-size: 32px;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.cursor_on:hover {
+    background-color: #eff2f5;
+}
+
+/********
+main
+********/
+
+.main_wrap {
+    max-width: 1280px;
+    margin: auto;
+}
+
+.main_wrap .left_menu {
+    list-style-type: none;
+}
+
+.main_wrap .left_menu li {
+    padding: 5px 3px 5px 2px;
+}
