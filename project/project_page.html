@@ -10,8 +10,34 @@
     <head>
         <div class="git_head">
             <div class="head_first">
-                <button class="head_nav cursor_on fa-mosaic fa-solid fa-bars"></button>
-                <img class="git_logo" src="img/git_logo.png" alt="git_logo"/>
+                <details class="head_nav cursor_on">
+                    <summary><i class="fa-mosaic fa-solid fa-bars"></i></summary>
+
+                    <ul class="nav_menu">
+                        <li>
+                            <a href="javascript:void(0)">Home</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">All issues</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">All pull requests</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">All repositories</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Projects</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Discussions</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Codespaces</a>
+                        </li>
+                    </ul>
+                </details>
+                <i class="fa-brands fa-github git_logo"></i>
             </div>
             <div class="head_second">
                 <span class="head_title">Projects</span>
@@ -70,7 +96,9 @@
                     <div class="view_search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input class="search_input" type="text" name="search_input" value="is:open"/>
-                        <i class="fl fa-solid fa-circle-xmark"></i>
+                        <button class="search_button">
+                            <i class="fl fa-solid fa-circle-xmark"></i>
+                        </button>
                     </div>
                 </form>
                 <div class="project_table">
@@ -81,11 +109,11 @@
                         <div class="body_left">
                             <div class="tb_title">
                                 <i class="fa-solid fa-film"></i>
-                                <span class="project_title">@qwwe132's untitled project</span>
-                                <span class="project_type">private</span>
+                                <a class="project_title">@qwwe132's untitled project</a>
+                                <span class="project_type">Private</span>
                             </div>
-                            <div class="author">
-
+                            <div>
+                                <span class="author">qwwe132 #1 updated on Aug 5</span>
                             </div>
                         </div>  
                         <div class="body_right">
@@ -99,7 +127,43 @@
         </div>
     </main>
     <footer>
-
+        <div class="footer_wrap">
+            <div class="ft_div">
+                <i class="fa-brands fa-github git_ft_logo"></i>
+                <span class="git_inc">© 2026 GitHub, Inc</span>
+            </div>
+            <div>
+                <ul class="ft_link">
+                    <li>
+                        <a href="javascript:void(0)">Terms</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Security</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Status</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Community</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Docs</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Contact</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Manage cookies</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">Do not share my personal information</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
