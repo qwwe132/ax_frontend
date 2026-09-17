@@ -1,0 +1,80 @@
+.head first {
+    display: flex;
+}
+
+.head_second {
+    display: flex;
+    align-items: center;
+}
+/* 초기화 */
+* {
+    outline: none;
+}
+
+body {
+    margin: 0;
+}
+
+ul, ol, dl, dt, dd {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+/* 공통 스타일 */
+* {
+    box-sizing: border-box;
+    font-family: var(--primary-font-family);
+}
+
+html {
+    font-size: var(--primary-font-size);
+    background: #f8f8f8;
+}
+
+body {
+    color: var(--primary-font-color);
+    max-width: var(--primary-layout-size);
+    min-width: var(--primary-layout-min-size);
+    min-height: 700px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+/* 상단 영역 S */
+header .git_head { 
+    display: flex;
+}
+/* 상단 영역 E */
+
+.head_third {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+footer {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 12px;
+}
+main {
+    display: flex;
+    justify-content: center;
+}
+content {
+    display: flex;
+}
