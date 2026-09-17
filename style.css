@@ -1,0 +1,432 @@
+/* ============================================================
+   1. 기본 리셋 및 전역 스타일
+   ------------------------------------------------------------
+   CSS 변수(:root/var()) 대신, 배운 대로 색상값을 각 속성에
+   직접 HEX로 적어 넣었다. (재사용 편의성은 없어지지만 결과 화면은 동일)
+============================================================ */
+
+/* 모든 요소에 border-box를 적용해서 padding/border가 width에
+   포함되도록 함 → 레이아웃 계산이 훨씬 예측 가능해짐 */
+*{box-sizing:border-box;}
+
+/* html, body 모두 높이를 100%로 잡아, calc(100vh - 63px) 없이도
+   body를 세로 flex 컨테이너로 만들어 사이드바가 남는 높이를
+   자동으로 채우도록(align-items 기본값 stretch) 만든다. */
+html,body{height:100%;}
+
+body{
+  margin:0;                 /* 브라우저 기본 여백 제거 */
+  background:#0d1117;       /* 페이지 전체 배경색 (거의 검정에 가까운 남색) */
+  color:#e6edf3;             /* 기본 본문 글자색 (밝은 회백색) */
+  /* 시스템 폰트 스택: OS별로 가장 자연스러운 기본 글꼴을 사용 (GitHub 실제 방식과 동일) */
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size:14px;
+  display:flex;
+  flex-direction:column;    /* 헤더(위) → layout(아래)를 세로로 쌓음 */
+}
+a{color:inherit;text-decoration:none;}
+
+/* ============================================================
+   2. 상단 헤더 (top-header)
+   ------------------------------------------------------------
+   로고, 검색창, 우측 아이콘 버튼들이 가로로 나열되는 영역.
+   flexbox로 좌/중앙/우 배치를 쉽게 구현.
+============================================================ */
+.top-header{
+  display:flex;
+  align-items:center;   /* 세로 중앙 정렬 */
+  height:62px;
+  padding:0 16px;
+  background:#010409;
+  border-bottom:1px solid #21262d; /* 헤더와 본문 사이 구분선 */
+  gap:16px;              /* 자식 요소들 사이 간격 */
+}
+
+/* 아이콘만 있는 원형/사각 버튼 공통 스타일 (햄버거 메뉴, 리스트/카드 보기 전환 버튼) */
+.icon-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;height:32px;
+  color:#e6edf3;
+  border-radius:6px;
+  cursor:pointer;
+  background:transparent;
+  border:none;
+}
+.icon-btn:hover{background:#151b23;} /* hover 시 살짝 밝은 배경으로 클릭 가능함을 표시 */
+.icon-btn i{font-size:16px;} /* 햄버거 메뉴, 리스트/카드 보기 전환 아이콘 크기 */
+
+/* GitHub 로고 아이콘 + "Repositories" 타이틀을 묶는 영역 */
+.logo-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:16px;
+  font-weight:600;
+}
+.logo-title i{font-size:22px;} /* Font Awesome github 아이콘 크기 */
+
+/* 중앙 검색창을 감싸는 wrapper. flex:1로 남는 공간을 모두 차지해서
+   검색창이 항상 화면 중앙 근처에 오도록 만듦 */
+.header-search{
+  flex:1;
+  display:flex;
+  justify-content:flex-end; /* right 대신 배운 flex-end 값으로 대체 (가로 방향에서 결과 동일) */
+}
+.search-box{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:100%;
+  max-width:320px;       /* 너무 넓어지지 않도록 최대 너비 제한 */
+  height:32px;
+  padding:0 10px;
+  background:#0d1117;
+  border:1px solid #30363d;
+  border-radius:6px;
+  color:#8b949e;
+}
+/* 검색창 안의 돋보기 아이콘 (Font Awesome, svg의 width/height=14 역할을 font-size로 대신함) */
+.search-box .search-box-icon{font-size:14px;}
+/* 검색창 안의 "/" 단축키 안내 뱃지 (키보드 모양) */
+.search-box .kbd{
+  margin-left:auto;      /* 남은 공간을 왼쪽으로 밀어서 오른쪽 끝에 붙임 */
+  font-size:11px;
+  border:1px solid #30363d;
+  border-radius:4px;
+  padding:1px 5px;
+  color:#8b949e;
+}
+
+/* 헤더 우측: 아이콘 버튼들 + 구분선 + 아바타를 묶는 영역 */
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+/* 아이콘 그룹과 아바타 사이를 나누는 세로 구분선 */
+.divider-v{
+  width:1px;height:24px;background:#30363d;margin:0 4px;
+}
+/* 프로필 아바타: 실제 이미지 대신 그라데이션 원으로 대체 */
+.avatar{
+  width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,#8957e5,#3fb950);
+  display:inline-block;
+}
+
+/* 새 아이콘 버튼들: 이미지 참고용 원형 아웃라인 버튼 스타일
+   (fa-solid/fa-regular 아이콘을 감싸는 동그란 테두리 버튼) */
+.icon-btn-outline{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;height:32px;
+  border:1px solid #30363d;
+  border-radius:8px;
+  color:#8b949e;
+  background:transparent;
+  cursor:pointer;
+  font-size:14px;
+}
+.icon-btn-outline:hover{
+  border-color:#6e7681;
+  color:#e6edf3;
+}
+/* "+" 버튼은 폭이 조금 더 넓고, 아이콘+캐럿을 같이 담음 */
+.icon-btn-outline.plus-btn{
+  width:auto;
+  padding:0 8px;
+  gap:6px;
+}
+.icon-btn-outline.plus-btn .fa-caret-down{font-size:10px;}
+
+/* ============================================================
+   3. 전체 레이아웃 (사이드바 + 메인 콘텐츠를 가로로 배치)
+   ------------------------------------------------------------
+   body가 flex-column이고 이 .layout이 남는 세로 공간을 flex:1로
+   전부 차지한다. align-items를 지정하지 않으면 기본값이 stretch라서
+   .sidebar/.main이 .layout의 높이(=header를 제외한 나머지 화면 높이)
+   만큼 자동으로 늘어난다. 예전처럼 calc(100vh - 63px)을 사이드바에
+   따로 계산해 줄 필요가 없어졌다.
+============================================================ */
+.layout{
+  display:flex;
+  flex:1;
+}
+
+/* ============================================================
+   4. 좌측 사이드바
+   ------------------------------------------------------------
+   - 상단: 내비게이션 메뉴 4개 (My contributions 등)
+   - 중간: Views 섹션
+   - 하단: Collapse sidebar (margin-top:auto로 항상 맨 아래 고정)
+============================================================ */
+.sidebar{
+  width:260px;
+  min-width:260px;        /* flex 자식이라도 줄어들지 않도록 고정 */
+  background:#010409;
+  border-right:1px solid #21262d;
+  padding:20px 16px;
+  display:flex;
+  flex-direction:column;  /* 세로로 쌓기 (메뉴 → Views → Collapse) */
+}
+
+/* 사이드바 메뉴 한 줄 (아이콘 + 텍스트) */
+.nav-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:6px 8px;
+  border-radius:6px;
+  color:#8b949e;
+  font-weight:500;
+  cursor:pointer;
+  position:relative;       /* ::before 왼쪽 강조선의 기준점 */
+}
+.nav-item i{font-size:16px;flex-shrink:0;width:16px;text-align:center;} /* 아이콘이 줄어들지 않게 고정 */
+.nav-item:hover{background:#151b23;}
+
+/* 현재 선택된 메뉴("My contributions") 강조 스타일 */
+.nav-item.active{
+  background:#151b23;
+  color:#e6edf3; /* 흐린 회색이 아니라 진한 흰색으로 강조 */
+}
+/* 활성 메뉴 왼쪽에 붙는 주황색 세로 바 (GitHub 특유의 선택 표시) */
+.nav-item.active::before{
+  content:"";
+  position:absolute;
+  left:-16px;   /* sidebar의 padding 영역까지 삐져나가게 배치 */
+  top:2px;
+  bottom:2px;
+  width:2px;
+  background:#f78166;
+  border-radius:2px;
+}
+
+/* "Views" 섹션 전체를 감싸는 블록 (메뉴 목록과의 간격을 위해 margin-top) */
+.nav-section{margin-top:22px;}
+/* "Views" 라는 제목 + 우측의 + 버튼을 양 끝 정렬 */
+.nav-section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:6px 8px;
+  color:#e6edf3;
+  font-weight:600;
+}
+.nav-section-header i{font-size:14px;cursor:pointer;}
+/* "Views" 제목 왼쪽의 layer-group 아이콘과 텍스트 사이 간격 */
+.nav-section-title{display:flex;align-items:center;gap:8px;}
+.nav-section-title i{font-size:14px;color:#8b949e;}
+.no-saved-views{
+  padding:6px 8px;
+  color:#8b949e;
+  font-size:13px;
+}
+
+/* 사이드바 맨 아래 "Collapse sidebar" 항목.
+   margin-top:auto가 핵심: flex-column 컨테이너 안에서 이 요소를
+   남은 공간만큼 아래로 밀어내 항상 바닥에 붙게 만든다. */
+.collapse-sidebar{
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 8px;
+  color:#8b949e;
+  font-size:13px;
+  cursor:pointer;
+}
+.collapse-sidebar svg{width:16px;height:16px;}
+
+/* ============================================================
+   5. 메인 콘텐츠 영역 (사이드바 오른쪽 전체)
+============================================================ */
+.main{
+  flex:1;                 /* 사이드바를 제외한 나머지 폭을 모두 차지 (배경은 끝까지 꽉 채움) */
+  min-width:0;            /* flex 아이템이 내용 때문에 줄어들지 못하는 문제 방지 */
+  padding:32px 40px;
+}
+/* 실제 콘텐츠(제목, 필터바, 저장소 목록 등)는 이 wrapper 안에 넣어서
+   너무 넓은 화면에서도 가독성 있는 너비로 유지 + 가운데 정렬.
+   .main 자체는 max-width 없이 배경을 끝까지 채우기 때문에
+   초광폭 모니터에서도 오른쪽에 빈 여백이 남지 않는다. */
+.main-inner{
+  max-width:1200px;
+  margin:0 auto;
+}
+
+/* "My contributions" 제목 + "New repository" 버튼을 양 끝 배치 */
+.main-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+.main-header h1{
+  font-size:24px;
+  margin:0;
+}
+
+/* 초록색 "New repository" 버튼 */
+.btn-primary{
+  background:#238636;
+  color:#fff;
+  border:1px solid rgba(240,246,252,.1); /* 아주 옅은 하이라이트 테두리로 입체감 */
+  border-radius:6px;
+  padding:6px 16px;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+}
+.btn-primary:hover{background:#2ea043;}
+
+/* "contributed-by:@me" 필터가 표시되는 검색바 형태의 바 */
+.filter-bar{
+  display:flex;
+  align-items:center;
+  height:36px;
+  border:1px solid #30363d;
+  border-radius:6px;
+  padding:0 12px;
+  margin-bottom:20px;
+  background:#0d1117;
+}
+.filter-bar .filter-text{flex:1;} /* 남는 공간을 다 차지해서 오른쪽 아이콘들을 끝으로 밀어냄 */
+.filter-bar .filter-text .highlight{color:#a5a5ff;} /* "@me" 부분만 보라색으로 강조 */
+/* 돋보기 아이콘이 Font Awesome(i 태그)로 바뀐 부분: svg와 동일한 크기/색상/커서 적용 */
+.filter-bar i{font-size:14px;color:#7d8590;cursor:pointer;}
+.filter-bar .clear-btn{margin-right:12px;} /* X 아이콘과 돋보기 아이콘 사이 간격 */
+
+/* 저장소 목록 전체를 감싸는 카드형 패널 (둥근 테두리 박스) */
+.repo-panel{
+  border:1px solid #30363d;
+  border-radius:6px;
+  overflow:hidden;       /* 내부 요소가 둥근 모서리 밖으로 삐져나가지 않도록 함 */
+}
+
+/* 패널 상단바: "5 repositories" 텍스트 + 정렬/보기방식 컨트롤 */
+.panel-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 16px;
+  background:#151b23;    /* 본문보다 한 톤 밝게 해서 헤더 영역임을 구분 */
+  border-bottom:1px solid #30363d;
+  font-weight:600;
+}
+.panel-header-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:400;
+  color:#8b949e;
+}
+/* "Relevance" 정렬 드롭다운 (아이콘 + 텍스트) */
+.sort-dropdown{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  cursor:pointer;
+}
+.sort-dropdown i{font-size:14px;}
+/* 리스트형/카드형 보기 전환 토글 버튼 그룹 */
+.view-toggle{
+  display:flex;
+  border:1px solid #30363d;
+  border-radius:6px;
+  overflow:hidden;        /* 내부 버튼들의 각진 모서리가 그룹 밖으로 안 튀어나오게 */
+}
+.view-toggle .icon-btn{
+  width:30px;height:28px;border-radius:0; /* 그룹 안에서는 개별 둥근 모서리 제거 */
+}
+.view-toggle .icon-btn:first-child{background:#30363d;} /* 현재 선택된 보기 방식 표시 */
+
+/* ============================================================
+   6. 저장소 한 줄(row) 스타일
+   ------------------------------------------------------------
+   저장소 이름/뱃지/메타정보(왼쪽)와 스파크라인 그래프(오른쪽)를
+   양 끝에 배치하는 구조.
+============================================================ */
+.repo-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px;
+  border-bottom:1px solid #21262d; /* 항목 사이 얇은 구분선 */
+  gap:20px;
+}
+.repo-row:last-child{border-bottom:none;} /* 마지막 줄은 밑줄 제거 */
+.repo-main{flex:1;min-width:0;} /* min-width:0으로 긴 텍스트가 있어도 flex 레이아웃이 안 깨지게 함 */
+
+/* "kimjmin31/work_2" 같은 저장소 이름 + Public 뱃지 줄 */
+.repo-name{
+  font-size:15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.repo-name .owner{color:#4493f8;font-weight:400;} /* 계정명: 얇은 글씨 */
+.repo-name .name{color:#4493f8;font-weight:600;}  /* 저장소명: 굵은 글씨로 강조 */
+
+/* "Public" 알약(pill) 모양 뱃지 */
+.badge{
+  font-size:11px;
+  border:1px solid #30363d;
+  border-radius:999px;   /* 매우 큰 값을 줘서 완전한 알약 모양을 만듦 */
+  padding:0 7px;
+  color:#8b949e;
+  line-height:18px;
+}
+
+/* 저장소 이름 아래 메타정보 줄 (언어, fork/star/watch 수, 업데이트 시각 등) */
+.repo-meta{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-top:6px;
+  color:#8b949e;
+  font-size:12px;
+  flex-wrap:wrap;         /* 화면이 좁아지면 다음 줄로 자연스럽게 넘어가도록 */
+}
+.repo-meta .dot{color:#30363d;} /* 항목 사이를 구분하는 "·" 기호 */
+/* 프로그래밍 언어를 나타내는 작은 색상 원 (Python=파랑, Jupyter=주황) */
+.repo-meta .lang-dot{
+  width:8px;height:8px;border-radius:50%;
+  display:inline-block;
+  margin-right:2px;
+}
+.lang-dot.jupyter{background:#DA5B0B;} /* GitHub 공식 Jupyter Notebook 색상 */
+.lang-dot.python{background:#3572A5;}  /* GitHub 공식 Python 색상 */
+
+/* fork/star/watch/PR 등 아이콘+숫자 한 쌍 */
+.stat-item{display:flex;align-items:center;gap:4px;}
+.stat-item i{font-size:14px;color:#7d8590;}
+.gear-icon i{font-size:14px;color:#7d8590;cursor:pointer;} /* 설정 톱니바퀴 */
+
+.sparkline{flex-shrink:0;} /* 우측 그래프는 좁아져도 찌그러지지 않도록 고정 */
+
+/* ============================================================
+   7. 하단 "ProTip!" 안내 박스
+============================================================ */
+.tip-box{
+  display:flex;
+  align-items:flex-start; /* 아이콘을 텍스트 첫 줄 높이에 맞춰 위쪽 정렬 */
+  gap:8px;
+  margin-top:20px;
+  color:#8b949e;
+  font-size:13px;
+}
+.tip-box i{font-size:16px;flex-shrink:0;margin-top:1px;color:#e3b341;} /* 전구 아이콘: 노란색 */
+.tip-box b{color:#e6edf3;} /* "ProTip!" 글자만 흰색으로 강조 */
+/* language:Go,Ruby 같은 코드 스니펫 표시용 스타일 */
+.tip-box code{
+  background:#151b23;
+  border:1px solid #30363d;
+  border-radius:4px;
+  padding:1px 5px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace; /* 고정폭 글꼴로 코드임을 표시 */
+  color:#e6edf3;
+}
