@@ -39,6 +39,11 @@ ul, ol, li, dl, dt, dd {
 }
 
 
+h1, h2, h3, h4 {
+    margin: 0;
+    font-weight: normal;
+}
+
 
 * {
     box-sizing: border-box;
@@ -77,6 +82,27 @@ header section.right {
     align-items: center;
 }
 
+header section.right button  {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 3px;
+
+}
+
+header section.right ._4px_bar {
+    width: 1px;
+    height: 20px;
+    background: #ccc;
+    margin: 0 5px;
+}
+
+header .user_menu_button {
+    width:32px;
+    height:32px;
+    justify-content: flex-end;
+}
+
 /* header 스타일 E */
 
 /* main 레이아웃 구성 S */
@@ -92,10 +118,113 @@ main > aside {
     border-right: 1px solid #ccc;
 }
 
+main > aside a {
+    color: var(--primary-font-color);
+}
+
 main > .main-content {
     flex-grow: 1;
 }
+
+.main-content-header {
+    display: flex;
+    box-sizing: border-box;
+    width: 951px;
+
+}
+
+.content-header-left {
+    font-size-adjust: 100%;
+    font-size: 20px;
+    font-weight:600;
+    color: rgb(31,35,40)
+}
+
+.content-header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.publish_box .top, .publish_box.other {
+    display: flex;
+    height: 28px;
+    justify-content: space-between;
+    width: 100%; 
+}
+
+.publish_box .left {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.publish_box .left h2 { margin: 0 10px; }
+
+.publish_box button {
+    background: transparent;
+    border: 0;
+}
+
+.publish_box .content {
+    margin: 15px 0 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 156px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.publish_box .content > div {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.main-content > ul {
+    padding: 25px;
+}
+
+/* li.toggle {
+    box-sizing: border-box;
+    height: 28px;
+    margin:0;
+
+} */
+
+.number_inbox {
+    box-sizing: border-box;
+    width: 21px;
+    height: 21px;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(129, 139, 152, 0.12);
+    border-style:1px solid rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 21px;
+
+
+}
 /* main 레이아웃 구성 E */
+
+
+/* main 스타일 S */
+ul h2 {
+    font-family: var(--primary-font-family);
+    font-size: 16px;
+    color: var(--primary-font-color);
+}
+
+main-content-header {
+    
+}
+
+number_inbox {
+
+}
+/* main 스타일 E */
 
 /* footer 스타일 S */
 footer {
