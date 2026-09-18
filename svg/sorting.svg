@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <!-- three decreasing bars -->
+  <path d="M80 140 H340" stroke="#000" stroke-width="44" stroke-linecap="round"/>
+  <path d="M80 248 H250" stroke="#000" stroke-width="44" stroke-linecap="round"/>
+  <path d="M80 356 H220" stroke="#000" stroke-width="44" stroke-linecap="round"/>
+  <!-- down arrow -->
+  <path
+    d="M384 168 V340"
+    stroke="#000"
+    stroke-width="44"
+    stroke-linecap="round"
+  />
+  <path
+    d="M292 292 L384 400 L476 292"
+    stroke="#000"
+    stroke-width="44"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>

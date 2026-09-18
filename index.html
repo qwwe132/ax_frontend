@@ -3,111 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pull requests</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="pullrequests.css">
-    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="images/git_logo.png">
+    <title>GitHub Dashboard</title>
+    
 </head>
-<body>
+<body class="main-page">
     <header>
-        <section class="left">
-            <button type="button" class="header_menu_button">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <i class="fa-brands fa-github"></i>
-            <span>Pull requests</span>
-        </section>
-        <section class="right">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-               돋보기<i class="fa-solid fa-magnifying-glass"></i>
-            <div class="head_third"></div>
+        <div class="head_left">
+            <button type="button"></button>
+            <a href='#' class="logo">
+                <img src="images/git_logo.png">
+            </a>
+            <a href="#" class="dashboard">Dashboard</a>
+        </div>
 
-                플러스
-                삼각형
-                인박스 
+        <div class="head_right">
+            <a href="#">
+                <button type="button" class="search"></button>
+            </a>
+        
+            
+            <a href="#">
+                <button type="button" class="copilot"></button>
+            </a>
 
-        </section>
+            <a href="#">
+                <button type="button" class="create"></button>
+            </a>
+
+            
+            <a href="#">
+                <button type="button" class="issues"></button>
+            </a>
+
+            <a href="#">
+                <button type="button" class="requests"></button>
+            </a>
+
+            
+            <a href="#">
+                <button type="button" class="repositories"></button>
+            </a>
+
+            
+            <a href="#">
+                <button type="button" class="notigications"></button>
+            </a>
+        
+            <a href="#">
+                <button type="button" class="navigation"></button>
+            </a>
+        </div>
+
+
     </header>
     <main>
-        <aside>
-            <div class="sidebar_menu_buttons">
-                    <ul class="sidebar_flex1">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <div class="Inbox_side_menu"><i class="fa-solid fa-inbox"></i>Inbox</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <div class="Inbox_side_menu"><i class="fa-regular fa-face-smile"></i>Authored by me</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <div class="Inbox_side_menu"><i class="fa-regular fa-user"></i>Assigned to me</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <div class="Inbox_side_menu"><i class="fa-regular fa-message"></i>Involves me</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <div class="Inbox_side_menu"><i class="fa-solid fa-code-pull-request"></i>Review requests</div>
-                            </a>                        
-                        </li>
-                    </ul>
-                    <hr>
-                    <div>
-                        <span>Views</span>
-                        <button class="create_view_button" type="button"><i class="fa-solid fa-plus"></i></button>
+        <div class="wrapper">
+            <aside> 
+                <div class="dashboard-sidebar"></div>
+                    <div class="top-repo">
+                        <h3 class="f5">Top Repositories</h3>
+                        <button type="button" class="art new"><img src="images/스크린샷 2026-09-18 150002-Photoroom.png"> New</button>
+                        
+                        
+                        <br>
                     </div>
-                    <p>No saved views</p>
+                <input type="text" class="find" id="repo" placeholder="Find a repository..." aria-label="Find a repository...">
+            </aside>
+
+            <section id="main-content">
+
+                <div class="inner">
+                    <div><h2>Home</h2><br>
+                    </div>
+
+                    <div class="box">
+                        <textarea class="addcontext" placeholder="Ask anything or type @ to add context" aria-label="Ask anything or type @ to add context">
+                        </textarea>
+                        <div class="underbutton">
+                            <a href="#" class="box1">
+                                <button type="button" class="ask">
+                                    <img class="s1" src="images/free-icon-chat-273824.png"/>
+                                    <span type="button" class="auto-center">Ask</span>
+                                    <img class="s1" src="images/caret-down-solid-full.svg"/>
+
+                                </button>
+                            </a>
+                            <a href="#" class="box2">
+                                <button type="button" class="ar">
+                                    <img class="s2" src="images/스크린샷 2026-09-18 150002-Photoroom.png"/>
+                                    <span type="button" class="auto-center">All repositories</span>
+                                    <img class="s2" src="images/caret-down-solid-full.svg"/>
+                                </button>
+                            </a>
+                            <a href="#" class="box3">
+                                <button type="button" class="addfiles">
+                                    <img class="s3" src="images/plus-solid-full.svg">
+                                </button>
+                            </a>
+
+                            <a href="#" class="box4">
+                                <button type="button" class="auto">
+                                    <img class="s16" src="images/copilot-brands-solid.png"/>
+                                    <span type="button" class="auto-center">Auto</span>
+                                    <img class="s16" src="images/caret-down-solid-full.svg"/>
+                                </button>
+                            </a>
+
+                            <a href="#" class="box5">
+                                <button type="button" class="balance">
+                                    <span type="button" class="auto-center">Optimized for: Balance</span>
+                                    <img class="s4" src="images/caret-down-solid-full.svg"/>
+                                </button>
+                            </a>
+
+                            <a href="#" class="box6">
+                                <button type="button" class="viewtoken">
+
+                                </button>
+                            </a>
+                            <a href="#" class="box7">
+                                <button type="button" class="sendnow">
+
+                                </button>
+                            </a>
+                            
+
+                            
+                            
+                        </div>
+                    </div>
+                    
+
+                    </div>
+                    <div class="commandstarters">
+                        <ul class="starter">
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="debug">Debug</button>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="agent">Agent</button>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="create">Create issue</button>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="writecode">Write code</button>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="git">Git</button></li>
+                                </a>
+
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="pullreq">Pull requests</button>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="app">
+                        The GitHub Copilot App New<br>
+                        An agent-driven desktop experience built natively on GitHub.<br>
+                        <button>Download for Windows</button>
+                        
+                    </div>
+                    <div>
+                        Feed
+                        <button>Filter</button>
+                    </div>
+                    <div>
+                        Trending repositories ...
+                    </div>
                 </div>
-                <div class="sidebar_margin_collapse"></div>
-
-        </aside>
-        <section class="main-content">
-                        <div class="publish_box">
-                            <div class="top">
-                                <button type="button">
-                                <i class="fa-solid fa-angle-right"></i></button>
-                                <h2>Needs your review</h2>
-                            </div>
-                            <div class="content hide">
-                                All caught up
-                            </div>
-                            <button type="button"></button>
-                        </div>
-                        <div class="publish_box">
-                            <button type="button"><i class="fa-solid fa-angle-right"></i></button>
-                            <h2>Needs your teams' review</h2>
-                            <button type="button"><i class="fa-solid fa-circle-info"></i></button>
-                        </div>
-                        <div class="publish_box">
-                            <button type="button"><i class="fa-solid fa-angle-right"></i></button>
-                            <h2>Your drafts</h2>
-                            <button type="button"><i class="fa-solid fa-circle-info"></i></button>
-                        </div>
-                        <div class="publish_box">
-                            <button type="button"><i class="fa-solid fa-angle-right"></i></button>
-                            <h2>Waiting for review or checks</h2>
-                            <button type="button"><i class="fa-solid fa-circle-info"></i></button>
-                        </div>
-                        <div class="publish_box">
-                            <button type="button"><i class="fa-solid fa-angle-right"></i></button>
-                            <h2>Needs action</h2>
-                            <button type="button"><i class="fa-solid fa-circle-info"></i></button>
-                        </div>
-                        <div class="publish_box">
-                            <button type="button"><i class="fa-solid fa-angle-right"></i></button>
-                            <h2>Ready to merge</h2>
-                            <button type="button"><i class="fa-solid fa-circle-info"></i></button>
-                        </div>
-
-        </section>
+            </section>
+        </div>
+        <footer></footer>
     </main>
-    <footer>푸터</footer>
+
 </body>
 </html>

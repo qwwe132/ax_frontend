@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Assigned to me · Issues</title>
+        <!-- Font Awesome 링크 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Jua&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="Issues.css">
+    </head>
+    <body>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Jua&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+            .Views {
+                font-family: 'Mona Sans', sans-serif; 
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            .ViewsBelow {
+                font-family: 'Mona Sans', sans-serif; 
+                font-size: 12px;                
+            }
+
+            .font20 {
+                font-family: 'Mona Sans', sans-serif; 
+                font-size: 20px;
+                font-weight: 500;
+                margin: 4px;
+            }
+
+            .font14 {
+                font-family: 'Mona Sans', sans-serif; 
+                font-size: 14px;
+            }
+
+
+        </style>
+        <div>
+            <div>
+                <span></span>
+                <div>
+                    <header>
+                        <div class="HeaderBox">
+                            <!-- 왼쪽 버튼 / 로고 -->
+                            <div class="headerbox headerbox-left">
+                                <button type="button"  class="button-3bar headerbox-1">
+                                    <i class="fa-solid fa-bars"></i>
+                                </button>
+                                <a aria-label="GitHub Homepage" class="footer-octicon-header mr-2 headerbox-1" href="https://github.com">
+                                    <i class="fa-brands fa-github headerbox-1" viewBox></i>
+                                </a>
+                                <nav class="headerbox-1">Issues</nav>
+                            </div>
+                            <!-- 서치 바 -->
+                            <!-- 상호작용 버튼 -->
+                            <div class="headerbox headerbox-right">
+                                <!-- 버튼 모음 -->
+                                <div class="headerbox-2">
+                                    <div class="SearchModule">
+                                        <input id="searchtext" name="searchtext" type="text" placeholder="Type / to search" style="flex:1;min-width:120px">
+                                    </div>
+                                </div>
+                                <button type="button" class="copilot">
+                                    <img src="/svg/copilot-brands-solid-full.svg" width="16" height="16">
+                                </button>
+                                <button type="button" class="plus">
+                                    <img src="/svg/plus-solid-full.svg" width="16" height="16">
+                                </button>
+                                <button type="button" class="circle-dot">
+                                    <img src="/svg/Circle_with_Central_Point.svg" width="16" height="16">
+                                </button>
+                                <button type="button"  class="pull-request">
+                                    <img src="/svg/code-pull-request-solid-full.svg" width="16" height="16">
+                                </button>
+                                <button type="button" class="repository">
+                                    <img src="/svg/book-bookmark-solid-full.svg" width="16" height="16">
+                                </button>
+                                <!-- 알림 -->
+                                <div class="headerbox headerbuttons notification">
+                                    <button type="button"  class="notification">
+                                        <img src="/svg/inbox-alt-1-svgrepo-com.svg" width="16" height="16">
+                                    </button>
+                                </div>
+                                <!-- 프로필 버튼 -->
+                                <div class="headerbox headerbuttons profile">
+                                    <button type="button"  class="profile">
+                                        <img src="/svg/circle-user-regular-full.svg" width="16" height="16">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <!-- 바디 -->
+                <div>
+                <main>
+                    <div class="wrapper">
+                        <!-- 1. 좌측 사이드바 (wrapper의 첫 번째 자식) -->
+                        <div class="asideBar">
+                            <aside>
+                                <nav>
+                                    <ul class="ActionList">
+                                        <li class="ActionListItem">
+                                            <a href="https://github.com/issues/assigned" class="ActionListContent">
+                                                <span class="ActionListSpacer">
+                                                    <div>
+                                                        <img src="/svg/user-regular-full.svg" width="16" height="16" alt="User">
+                                                    </div>
+                                                </span>
+                                                <span class="textLines">Assigned to me</span>
+                                            </a>
+                                        </li>
+                                        <li class="ActionListItem">
+                                            <a href="https://github.com/issues/created">
+                                                <span>
+                                                    <div>
+                                                        <img src="/svg/face-smile-regular-full.svg" width="16" height="16" alt="Created">
+                                                    </div>
+                                                </span>
+                                                <span class="textLines">Created by me</span>
+                                            </a>
+                                        </li>
+                                        <li class="ActionListItem">
+                                            <a href="https://github.com/issues/mentioned">
+                                                <span>
+                                                    <div>
+                                                        <img src="/svg/mention-svgrepo-com.svg" width="16" height="16" alt="Mentioned">
+                                                    </div>
+                                                </span>
+                                                <span class="textLines">Mentioning me</span>
+                                            </a>
+                                        </li>
+                                        <li class="ActionListItem">
+                                            <a href="https://github.com/issues/recent">
+                                                <span>
+                                                    <div>
+                                                        <img src="/svg/clock-regular-full.svg" width="16" height="16" alt="Recent">
+                                                    </div>
+                                                </span>
+                                                <span class="textLines">Recently updated</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+
+                                <!-- Views 사이드바 -->
+                                <div class="ViewsHead">
+                                    <hr>
+                                    <div id="view-plus">
+                                        <div class="Views">Views</div>
+                                        <div>
+                                            <button type="button" id="viewplus" class="SidebarViewsPlus">
+                                                <img src="/svg/plus-solid-full.svg" width="16" height="16">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="ViewsBelow">No saved views</div>
+                                </div>
+                            </aside>
+                        </div>
+
+                        <!-- 2. 우측 메인 콘텐츠 (wrapper의 두 번째 자식) -->
+                        <div id="main-content">
+                            <div class="inner">
+                                <!-- Assigned to me 헤더 -->
+                                <div class="justpadding">
+                                    <div id="main-header">
+                                        <div class="textLeftLargeAccent">Assigned to me</div>
+                                        <div class="content-head-button">
+                                            <div>
+                                                <button type="button" class="NewIssue">New Issue</button>
+                                            </div>
+                                            <div id="setting" class="Gear">
+                                                <button type="button" class="gear">
+                                                    <img src="/svg/gear-solid-full.svg" width="16" height="16">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="inputbar">
+                                        <input id="searchtext2" name="searchtext" type="text" placeholder="is:issue state:open archived:false assignee:@me sort:updated-desc" style="flex:1;min-width:120px">
+                                        <button type="button" class="transparentbutton">
+                                            <img src="/svg/circle-xmark-solid-full.svg" width="16" height="16">
+                                        </button>
+                                        <button type="button">
+                                            <img src="/svg/magnifying-glass-solid-full.svg" width="16" height="16">
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- 아래 탭 -->
+                                <div id="contentundertab">
+                                    <div class="boxradius">
+                                        <div class="top-wrap">
+                                            <div class="openclosed">
+                                                <span class="font14">Open</span>
+                                                <span class="font14">Closed</span>
+                                            </div>
+                                            <div class="updatedbutton">
+                                                <div>
+                                                    <span><img src="/svg/sorting.svg" width="16" height="16"></span>
+                                                    <span class="font14">Updated</span>
+                                                </div>
+                                                <div class="buttoncombine">
+                                                    <img src="/svg/layers.svg" width="16" height="16" class="buttonwhite">
+                                                    <img src="/svg/bars-solid-full.svg" width="16" height="16" class="buttontransparent">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="results">
+                                            <div>
+                                                <img src="/svg/magnifying-glass-solid-full.svg" width="16" height="16"> <div class="font20">No results matched your search</div>
+                                                
+
+                                                    <div>
+                                                        Try a different search query.
+                                                        <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/filtering-and-searching-issues-and-pull-requests">
+                                                            Learn more about searching and filtering issues and pull requests.
+                                                        </a>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main> 
+                </div>
+                <!-- footer -->
+                <div class="footer-footer">
+                    <footer>
+                        <h2 class="sr-only">Footer</h2>
+                        <!-- 아래 상태 칸 나눔 -->
+                        <div class="d-flex flex-justify-center flex-items-center flex-column-reverse flex-lg-row flex-wrap flex-lg-nowrap">
+                            <!-- 로고랑 Inc -->
+                            <div>
+                                <a aria-label="GitHub Homepage" class="footer-octicon mr-2" href="https://github.com">
+                                    <i class="fa-brands fa-github" viewBox></i>
+                                </a>
+                                <span>© 2026 GitHub, Inc.</span>
+                            </div>
+                            <!-- 글자 -->
+                            <nav>
+                                <h3 class="sr-only" id=""sr-footer-heading>Footer navigation</h3>
+                                <ul class="list-style-none d-flex flex-justify-center flex-wrap mb-2 mb-lg-0" aria-labelledby="sr-footer-heading">
+                                    <li class="mx-2">
+                                        <a href="https://docs.github.com/site-policy/github-terms/github-terms-of-service" class="Link--secondary Link">Terms</a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" class="Link--secondary Link">Privacy</a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="https://github.com/security" class="Link--secondary Link">Security</a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="https://www.githubstatus.com/" class="Link--secondary Link">Status</a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="https://github.community/" class="Link--secondary Link">Community</a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="https://docs.github.com/" class="Link--secondary Link">Docs</a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="https://support.github.com?tags=dotcom-footer" class="Link--secondary Link">Contact</a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <button type="button" class="Link--secondary underline-on-hover border-0 p-0 color-bg-transparent" data-action="click:cookie-consent-link#showConsentManagement">
+                                            Manage cookies
+                                        </button>
+                                    </li>
+                                    <li class="mx-2">
+                                        <button type="button" class="Link--secondary underline-on-hover border-0 p-0 color-bg-transparent text-left" data-action="click:cookie-consent-link#showConsentManagement">
+                                            Do not share my personal information
+                                        </button>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </footer>
+                </div>
+                </div>
+                <div></div>
+            <div></div>
+        </div>
+    </body>
+</html>
