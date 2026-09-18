@@ -1,5 +1,6 @@
-.head first {
+.head_first {
     display: flex;
+    padding: 10px 5px 10px 15px;
 }
 
 .head_second {
@@ -53,6 +54,24 @@ body {
 header .git_head { 
     display: flex;
 }
+
+header {
+    height: 64px;
+    border-bottom: 1px solid #30363d;
+}
+
+
+
+
+.head_first {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 15px;
+
+    margin: 0;
+}
 /* 상단 영역 E */
 
 .head_third {
@@ -60,21 +79,238 @@ header .git_head {
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 16px 16px 16px 8px;
+
+
 }
-footer {
-    margin-top: 50px;
+
+
+.top-search {
+    border: 1px solid #30363d;
+    width: 191px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 15px;
+    align-items: center;
+}
+.top-search i {
+   
+    margin-left: 10px;
+    align-items: center;
+}
+
+.icon-box {
+    width: 58px;
+    height: 32px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.icon-box .copliot {
+    width: 16px;
+    margin-right: 15px;
+}  
+
+.icon-box::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    right: 26px;
+    background: #ccc;
+    position: absolute;
+}
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background: #ccc;
+}
+
+.icon-box2 {
+    width: 50px;
+    height: 32px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.icon-box3 {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.icon-box4 {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.icon-box5 {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.icon-box6 {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #30363d;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+ .user_menu {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url("../images/312277608.png") no-repeat center center;
+    background-size: cover;
+    cursor: pointer;
+
+}
+
+
+footer {
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footer-menu {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 48px 16px 40px
+}
+
+
+footer {
+    width: fit-content;
+
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
 
     font-size: 12px;
+    color: #30363d;
+    cursor: pointer;
 }
+
+footer a {
+    color: #30363d;
+    text-decoration: none;
+}
+
+footer i {
+    font-size: 18px;
+}
+
 main {
     display: flex;
     justify-content: center;
+    padding: 24px 16px 0;
 }
 content {
     display: flex;
+
+}
+.search-box {
+    width: 784px;
+    height: 32px;
+
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: #c9d1d9;
+    display: flex;
+    align-items: center;
+}
+
+.search-box i {
+    margin-right: 10px;
+}
+
+.empty-box {
+    width: 978px;
+    height: 252px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px;
+}
+.filter-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 15px;
+
+}
+.tabs {
+    display: flex;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+
+}
+
+.git_logo {
+    display: flex;
+    align-items: center;
+}
+
+.git_logo i {
+    font-size: 32px;
+    margin: 0 10px;
+}
+.git_logo span {
+    weidth: 72.8px;
+    height: 24px
 }
