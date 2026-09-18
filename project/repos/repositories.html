@@ -5,17 +5,16 @@
 <title>Repositories</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="repo_style.css">
+<script src="https://kit.fontawesome.com/b853f0ae27.js" crossorigin="anonymous"></script>
+<!-- <link rel="icon" href="깃허브 아이콘 ico 경로 입력시 파비콘이 삽입됨"> -->
 </head>
 <body>
 
 <!-- ============================================================
      [상단 헤더] 로고 + 검색창 + 우측 아이콘/아바타
-     실제 GitHub와 동일하게 sticky 헤더는 아니지만, 스크롤해도
-     항상 맨 위에 고정하고 싶다면 .top-header에 position:sticky;
-     top:0; 을 추가하면 됨.
 ============================================================ -->
 <header class="top-header">
-  <!-- 햄버거 메뉴 버튼 (사이드바 접기/펼치기 용도, 현재는 클릭 동작 없음) -->
+  <!-- 햄버거 메뉴 버튼 -->
   <button class="icon-btn">
     <i class="fa-solid fa-bars"></i>
   </button>
@@ -26,40 +25,47 @@
     <span>Repositories</span>
   </div>
 
-  <!-- 중앙 검색창: "Type / to search" 안내 문구 + 단축키 뱃지 -->
+  <!-- 중앙 검색창 + 코파일럿 버튼 -->
   <div class="header-search">
-  <div class="search-box">
-    <i class="fa-solid fa-magnifying-glass search-box-icon"></i>
-    <input
-      type="text"
-      class="search-input"
-      placeholder="Type to search"
-    >
-    <span class="kbd">/</span>
-  </div>
-</div>
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass search-box-icon"></i>
+      <div class="search-box-inner">
+        <input type="text" class="search-input" placeholder="">
+        <div class="fake-placeholder">
+          <span>Type</span><span class="kbd">/</span><span>to search</span>
+        </div>
+      </div>
+    </div>
 
-  <!-- 우측 아이콘 그룹: Font Awesome 아이콘으로 교체
-       (+, circle-dot, pull-request, book-bookmark, inbox 순서) -->
-  <div class="header-right">
-    <button class="icon-btn-outline plus-btn"> <!-- 새 항목 만들기 (+) -->
-      <i class="fa-solid fa-plus"></i>
-      <i class="fa-solid fa-caret-down"></i>
+    <button class="icon-btn-outline copilot-btn">
+      <span class="btn-cell"><i class="fa-brands fa-copilot"></i></span>
+      <span class="btn-cell divider"><i class="fa-solid fa-chevron-down"></i></span>
     </button>
-    <button class="icon-btn-outline"> <!-- 원형 점 아이콘 -->
+  </div>
+
+  <!-- 코파일럿 블록 ↔ + 블록 사이 구분선: header-search 밖으로 빼서
+       top-header의 gap:16px가 양쪽에 똑같이 적용되게 함 (정중앙 정렬) -->
+  <div class="divider-v"></div>
+
+  <div class="header-right">
+    <button class="icon-btn-outline plus-btn">
+      <span class="btn-cell"><i class="fa-solid fa-plus"></i></span>
+      <span class="btn-cell divider"><i class="fa-solid fa-chevron-down"></i></span>
+    </button>
+    <button class="icon-btn-outline">
       <i class="fa-regular fa-circle-dot"></i>
     </button>
-    <button class="icon-btn-outline"> <!-- Pull Request 아이콘 -->
+    <button class="icon-btn-outline">
       <i class="fa-solid fa-code-pull-request"></i>
     </button>
-    <button class="icon-btn-outline"> <!-- 북마크된 저장소 아이콘 -->
+    <button class="icon-btn-outline">
       <i class="fa-solid fa-book-bookmark"></i>
     </button>
-    <button class="icon-btn-outline"> <!-- 받은편지함(Inbox) 아이콘 -->
+    <button class="icon-btn-outline">
       <i class="fa-solid fa-inbox"></i>
     </button>
-    <div class="divider-v"></div> <!-- 아이콘군과 아바타를 시각적으로 분리하는 세로선 -->
-    <span class="avatar"></span> <!-- 프로필 사진 자리 (실제 이미지 대신 그라데이션 원) -->
+    <div class="divider-v"></div>
+    <span class="avatar"></span>
   </div>
 </header>
 
@@ -71,7 +77,6 @@
   <!-- ---------- 좌측 사이드바 ---------- -->
   <aside class="sidebar">
     <nav>
-      <!-- 현재 페이지: "My contributions" → active 클래스로 강조 표시 -->
       <div class="nav-item active">
         <i class="fa-solid fa-user-group"></i>
         My contributions
@@ -90,19 +95,14 @@
       </div>
     </nav>
 
-    <!-- "Views" 섹션: 사용자가 만든 저장된 필터 뷰 목록 (현재는 비어있음) -->
     <div class="nav-section">
       <div class="nav-section-header">
         <span class="nav-section-title"><i class="fa-solid fa-layer-group"></i>Views</span>
         <i class="fa-solid fa-plus"></i>
-        <!-- 새 뷰 추가용 "+" 아이콘 -->
       </div>
       <div class="no-saved-views">No saved views</div>
     </div>
 
-    <!-- 사이드바를 접는 버튼. margin-top:auto CSS 덕분에 항상 최하단에 위치.
-         fill 값은 currentColor 대신, 부모(.collapse-sidebar)에 지정된
-         글자색과 같은 HEX 값(#8b949e)을 직접 넣었다. -->
     <div class="collapse-sidebar">
       <svg viewBox="0 0 16 16" fill="#8b949e"><path d="M6.823 7.823a.25.25 0 0 1 0 .354l-2.396 2.396A.25.25 0 0 1 4 10.396V5.604a.25.25 0 0 1 .427-.177Z"/><path d="M1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0 1 14.25 16H1.75A1.75 1.75 0 0 1 0 14.25V1.75C0 .784.784 0 1.75 0ZM1.5 1.75v12.5c0 .138.112.25.25.25H9.5v-13H1.75a.25.25 0 0 0-.25.25ZM11 14.5h3.25a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25H11Z"/></svg>
       Collapse sidebar
@@ -113,51 +113,37 @@
   <main class="main">
    <div class="main-inner">
 
-    <!-- 페이지 제목 + "New repository" 버튼 -->
     <div class="main-header">
       <h1>My contributions</h1>
       <button class="btn-primary">New repository</button>
     </div>
 
-    <!-- 현재 적용된 필터 조건을 보여주는 바.
-         "@me"는 하이라이트 색상을 줘서 필터 값임을 시각적으로 구분 -->
     <div class="filter-bar">
       <div class="filter-text">contributed-by:<span class="highlight">@me</span></div>
-      <!-- 필터 초기화(X) 아이콘 -->
       <i class="fa-solid fa-x clear-btn"></i>
-      <!-- 검색(돋보기) 아이콘 -->
       <i class="fa-solid fa-magnifying-glass"></i>
     </div>
 
-    <!-- 저장소 목록을 담는 카드 패널 -->
     <div class="repo-panel">
 
-      <!-- 패널 헤더: 총 개수 / 정렬 기준(Relevance) / 리스트-카드 보기 전환 -->
       <div class="panel-header">
         <span>5 repositories</span>
         <div class="panel-header-right">
           <div class="sort-dropdown">
-            <!-- 위/아래 화살표가 있는 정렬 아이콘 -->
             <i class="fa-solid fa-arrow-down-wide-short"></i>
             Relevance
           </div>
-          <!-- 리스트형/카드형 보기 전환 버튼 2개 (첫 번째가 현재 선택 상태) -->
           <div class="view-toggle">
-            <button class="icon-btn"> <!-- 가로줄 3개: 리스트 보기 (현재 활성) -->
+            <button class="icon-btn">
               <i class="fa-solid fa-bars"></i>
             </button>
-            <button class="icon-btn"> <!-- 2x2 격자: 카드/그리드 보기 -->
+            <button class="icon-btn">
               <i class="fa-solid fa-table-cells-large"></i>
             </button>
           </div>
         </div>
       </div>
 
-      <!-- ==========================================================
-           [저장소 행 #1]
-           - fork 0 · star 0 · watch 12 · PR 2 · Aug 6에 업데이트
-           - 오른쪽에 최근 활동을 나타내는 스파크라인(꺾은선) 그래프
-      ========================================================== -->
       <div class="repo-row">
         <div class="repo-main">
           <div class="repo-name">
@@ -165,29 +151,20 @@
             <span class="badge">Public</span>
           </div>
           <div class="repo-meta">
-            <!-- fork 아이콘 + 개수 -->
             <span class="stat-item"><i class="fa-solid fa-code-fork"></i>0</span>
             <span class="dot">·</span>
-            <!-- star(별) 아이콘 + 개수 -->
             <span class="stat-item"><i class="fa-solid fa-star"></i>0</span>
             <span class="dot">·</span>
-            <!-- issue(이슈) 아이콘 + 개수 -->
             <span class="stat-item"><i class="fa-regular fa-circle-dot"></i>12</span>
             <span class="dot">·</span>
-            <!-- pull request 아이콘 + 개수 -->
             <span class="stat-item"><i class="fa-solid fa-code-pull-request"></i>2</span>
             <span class="dot">·</span>
             <span>Updated on Aug 6</span>
           </div>
         </div>
-        <!-- 최근 활동 추이를 보여주는 미니 그래프. polyline의 points 좌표만
-             바꾸면 그래프 모양이 바뀐다 (x,y 좌표쌍을 공백으로 나열) -->
         <svg class="sparkline" width="90" height="26" viewBox="0 0 90 26"><polyline points="0,18 15,17 30,19 45,15 60,16 72,8 90,3" fill="none" stroke="#3fb950" stroke-width="1.5"/></svg>
       </div>
 
-      <!-- ==========================================================
-           [저장소 행 #2]
-      ========================================================== -->
       <div class="repo-row">
         <div class="repo-main">
           <div class="repo-name">
@@ -205,14 +182,12 @@
             <span class="dot">·</span>
             <span>Updated last month</span>
             <span class="dot">·</span>
-            <!-- 저장소 설정(톱니바퀴) 아이콘: 소유한 저장소에만 노출됨 -->
             <span class="gear-icon"><i class="fa-solid fa-gear"></i></span>
           </div>
         </div>
         <svg class="sparkline" width="90" height="26" viewBox="0 0 90 26"><polyline points="0,20 20,19 40,19 55,16 70,4 90,10" fill="none" stroke="#3fb950" stroke-width="1.5"/></svg>
       </div>
 
-      <!-- [저장소 행 #3] -->
       <div class="repo-row">
         <div class="repo-main">
           <div class="repo-name">
@@ -236,7 +211,6 @@
         <svg class="sparkline" width="90" height="26" viewBox="0 0 90 26"><polyline points="0,19 20,20 40,18 55,17 70,6 90,3" fill="none" stroke="#3fb950" stroke-width="1.5"/></svg>
       </div>
 
-      <!-- [저장소 행 #4] -->
       <div class="repo-row">
         <div class="repo-main">
           <div class="repo-name">
@@ -244,8 +218,6 @@
             <span class="badge">Public</span>
           </div>
           <div class="repo-meta">
-            <!-- 언어 색상 점 + 언어명: GitHub는 저장소 내 코드 비율이 가장 높은
-                 언어 하나만 이 자리에 표시한다 -->
             <span class="lang-dot jupyter"></span><span>Jupyter Notebook</span>
             <span class="dot">·</span>
             <span class="stat-item"><i class="fa-solid fa-code-fork"></i>0</span>
@@ -264,7 +236,6 @@
         <svg class="sparkline" width="90" height="26" viewBox="0 0 90 26"><polyline points="0,19 20,19 40,20 55,19 70,15 90,3" fill="none" stroke="#3fb950" stroke-width="1.5"/></svg>
       </div>
 
-      <!-- [저장소 행 #5]-->
       <div class="repo-row">
         <div class="repo-main">
           <div class="repo-name">
@@ -291,7 +262,6 @@
       </div>
     </div>
 
-    <!-- 하단 사용 팁 안내 문구 -->
     <div class="tip-box">
       <i class="fa-regular fa-lightbulb"></i>
       <div><b>ProTip!</b> Using a comma within certain filters will aggregate the results. For example: <code>language:Go,Ruby</code> will show all repositories that have either Go or Ruby as their primary language.</div>
