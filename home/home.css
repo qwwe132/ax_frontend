@@ -62,7 +62,7 @@ input, textarea {
 .main-page header .head_left button {
     width: 32px;
     height: 32px;
-    background: url('../images/git_menu.png') no-repeat center center;
+    background: url('images/git_menu.png') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
 }
@@ -90,7 +90,7 @@ input, textarea {
 .main-page header .head_right .search {
     width: 32px;
     height: 32px;
-    background: url('../images/magnifying-glass-solid-full.svg') no-repeat center center;
+    background: url('images/magnifying-glass-solid-full.svg') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -100,7 +100,7 @@ input, textarea {
 .main-page header .head_right .copilot {
     width: 32px;
     height: 32px;
-    background: url('../images/copilot-brands-solid.png') no-repeat center center;
+    background: url('images/copilot-brands-solid.png') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -109,7 +109,7 @@ input, textarea {
 .main-page header .head_right .create {
     width: 32px;
     height: 32px;
-    background: url('../images/plus-solid-full.svg') no-repeat center center;
+    background: url('images/plus-solid-full.svg') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -118,7 +118,7 @@ input, textarea {
 .main-page header .head_right .issues {
     width: 32px;
     height: 32px;
-    background: url('../images/KakaoTalk_20260917_175753303-Photoroom.png') no-repeat center center;
+    background: url('images/icon-issues.png') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -127,7 +127,7 @@ input, textarea {
 .main-page header .head_right .requests {
     width: 32px;
     height: 32px;
-    background: url('../images/code-pull-request-solid-full.svg') no-repeat center center;
+    background: url('images/code-pull-request-solid-full.svg') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -136,7 +136,7 @@ input, textarea {
 .main-page header .head_right .repositories {
     width: 32px;
     height: 32px;
-    background: url('../images/스크린샷 2026-09-18 150002-Photoroom.png') no-repeat center center;
+    background: url('images/icon-repositories.png') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -145,7 +145,7 @@ input, textarea {
 .main-page header .head_right .notigications {
     width: 32px;
     height: 32px;
-    background: url('../images/inbox-solid-full.svg') no-repeat center center;
+    background: url('images/inbox-solid-full.svg') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -154,7 +154,7 @@ input, textarea {
 .main-page header .head_right .navigation {
     width: 32px;
     height: 32px;
-    background: url('../images/copilot-brands-solid.png') no-repeat center center;
+    background: url('images/copilot-brands-solid.png') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -254,7 +254,7 @@ input, textarea {
 /* .main-page header .head_right .copilot {
     width: 32px;
     height: 32px;
-    background: url('../images/copilot-brands-solid.png') no-repeat center center;
+    background: url('images/copilot-brands-solid.png') no-repeat center center;
     background-size: 16px;
     border: 1px solid #d1d9e0;
     border-radius: 8px;
@@ -337,7 +337,7 @@ input, textarea {
     width: 95px;
     height: 32px;
     border: 0px;
-    background: url('../images/copilot-brands-solid.png') no-repeat;
+    background: url('images/copilot-brands-solid.png') no-repeat;
     background-size: 16px;
     cursor: pointer;
     display: inline-block;
@@ -347,7 +347,7 @@ input, textarea {
     width: 95px;
     height: 32px;
     border: 0px;
-    background: url('../images/caret-down-solid-full.svg') no-repeat;
+    background: url('images/caret-down-solid-full.svg') no-repeat;
     background-size: 16px;
     cursor: pointer;
     display: inline-block;
