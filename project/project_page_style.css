@@ -160,6 +160,11 @@ main
     width: 70%;
 }
 
+.right_wrap h2 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
 .left_menu {
     position: relative;
     list-style-type: none;
