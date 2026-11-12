@@ -14,8 +14,8 @@
         <div class="git_head">
             <div class="head_first">
                 <div class="git_logo">
-                    <button class="head_nav cursor_on fa-mosaic fa-solid fa-bars"></button>
-                    <i class="fa-brands fa-github" class="git"></i>
+                    <button class="head_nav cursor_on fa-mosaic fa-solid fa-bars" aria-label="메뉴 열기"></button>
+                    <i class="fa-brands fa-github git"></i>
                     <span class="styles-module__contextCrumbLast__tI2e3"></span>
 
                     <strong>Discussions</strong>
@@ -27,39 +27,38 @@
         
                   
                 
-            <div class="head_third">
-                
+            <nav class="head_third" aria-label="Global">
                 <div class="top-search">
                     <i class="fa-solid fa-magnifying-glass"></i>  Type / to search
                       
                 </div>
                 
                 <div class="icon-box">
-                    <img src="images/copilot-brands-solid.png" class="copliot">
+                    <img src="images/copilot-brands-solid.png" class="copliot" alt="Copilot">
                     <i class="fa-solid fa-caret-down"></i>
                 </div>
-                <div class="divider"></div>
-                <div class="icon-box2">
+                <div class="divider" aria-hidden="true"></div>
+                <div class="icon-box2" title="새로 만들기" aria-label="새로 만들기">
                     <i class="fa-solid fa-plus"></i>
                     &nbsp;
                     <i class="fa-solid fa-caret-down"></i>
                 </div>
-                <div class="icon-box3">
+                <div class="icon-box3" title="Issues" aria-label="Issues">
                     <i class="fa-regular fa-circle-dot"></i>
                 </div>
-                <div class="icon-box4">
+                <div class="icon-box4" title="Pull requests" aria-label="Pull requests">
                     <i class="fa-solid fa-code-compare"></i>
                 </div>
-                <div class="icon-box5">
+                <div class="icon-box5" title="Repositories" aria-label="Repositories">
                     <i class="fa-solid fa-book-bookmark"></i>
                 </div>
-                <div class="icon-box6">
+                <div class="icon-box6" title="알림" aria-label="알림">
                     <i class="fa-solid fa-inbox"></i>
                 </div>
                 <div class="user_menu">
                     <!--<img src="images/312277608.png"> -->
                 </div>
-            </div>    
+            </nav>
             
                  
         </div>
@@ -72,10 +71,11 @@
                     <button class="active">Created</button>
                     <button>Commented</button>
                 </div>
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i> author:imeab
-            
-            </div>
+            <form class="search-box" role="search">
+                <label for="discussion-search" class="sr-only">Search discussions</label>
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="discussion-search" type="search" value="author:imeab">
+            </form>
             
         </div>
         <section class="empty-box">
@@ -84,12 +84,11 @@
                 <h3>No discussions match the selected filters.</h3>
                 <p>Discussions are used to ask questions and have open-ended conversations.</p>
         </section>
-    
+        </div>
+    </main>
 
-        <footer>
-            
-               
-            <div class="footer-menu">
+    <footer>
+            <nav class="footer-menu" aria-label="Footer">
                 <i class="fa-brands fa-github"></i>
                 <span>© 2026 GitHub, Inc.</span>
                 <a href="javascript:void(0)">Terms</a>
@@ -101,11 +100,8 @@
                 <a href="javascript:void(0)">Contact</a>
                 <a href="javascript:void(0)">Manage cookies</a>
                 <a href="javascript:void(0)">Do not share my personal information</a>
-            </div>
+            </nav>
+    </footer>
 
-
-        </footer>
-    </main>
-    
 </body>
 </html>
